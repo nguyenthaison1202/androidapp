@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Log_Up</string>
+    <string name="action_home">Trang chủ</string>
+    <string name="action_manage">Quản lý tin</string>
+    <string name="action_load">Đăng tin</string>
+    <string name="action_cart">Dạo chợ</string>
+    <string name="action_more">Thêm</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="facebook_app_id">734749217527397</string>
+    <string name="fb_login_protocol_scheme">fb734749217527397</string>
+    <string name="facebook_client_token">d1ab6262793407b553489aa997d84f66</string>
+    <string name="title_activity_input_phone">InputPhone</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+
+</resources>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HelpFragment"
+    android:padding="10dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Làm sao đăng ký tài khoản PPS Market?"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_margin="8dp">
+        </TextView>
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Để đăng ký tài khoản trên PPS Market, vui lòng làm theo các bước sau:"
+            android:textStyle="italic"
+            android:textColor="@color/black"
+            android:layout_margin="8dp">
+        </TextView>
+
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bước 1: Vào App→ Nhấn “Đăng ký“"
+            android:textColor="@color/black"
+            android:layout_margin="8dp">
+        </TextView>
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bước 2: Nhập số điện thoại bạn muốn sử dụng và mật khẩu tự tạo của bạn. Sau đó, nhấn vào nút Đăng ký"
+            android:textColor="@color/black"
+            android:layout_margin="8dp">
+        </TextView>
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Khi đó, tài khoản đã được tạo. Sau đó, một tin nhắn chứa Mã xác nhận sẽ được gửi tới số điện thoại trên, bạn dùng Mã này để xác nhận cho tài khoản của bạn."
+            android:textStyle="italic"
+            android:textColor="@color/black"
+            android:layout_margin="8dp">
+        </TextView>
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chat Với Người Bán là gì?"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_margin="8dp">
+        </TextView>
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PPS Market đã có tính năng “Chat với người bán”. Bạn có thể nhắn tin trực tiếp với người mua hoặc người bán trên PPS Market."
+            android:textStyle="italic"
+            android:textColor="@color/black"
+            android:layout_margin="8dp">
+        </TextView>
+
+        <TextView
+            android:textStyle="italic"
+            android:textColor="@color/black"
+            android:layout_margin="8dp"
+            android:text="Lưu ý:  Để sử dụng tính năng Chat, bạn cần Đăng nhập vào tài khoản PPS Market."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        <TextView
+
+            android:id="@+id/tv_help"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tôi phải làm gì khi tin đăng của tôi bị từ chối?"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_margin="8dp">
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Khi tin đăng bị từ chối, bạn có thể sửa tin đăng của mình bằng 1 trong 2 cách sau:"
+            android:textStyle="italic"
+            android:textColor="@color/black"
+            android:layout_margin="8dp">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cách 1: Kiểm tra hòm thư email của bạn để biết được tin đăng bị từ chối với lỗi gì và cách chỉnh sửa lại tin đăng."
+            android:textColor="@color/black"
+            android:layout_margin="8dp">
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cách 2: Tại phần Quản lý tin đăng, bạn có thể chọn xem Lý do bị từ chối và sửa tin ở mục bị từ chối; tại đó sẽ có hướng dẫn lý do tin bạn bị từ chối. Lưu ý: Một số lý do từ chối sẽ không cho phép sửa tin (nút Sửa tin sẽ hiển thị màu xám), khi đó bạn vui lòng đăng lại tin mới theo quy định của PPS Market."
+            android:textColor="@color/black"
+            android:layout_margin="8dp">
+        </TextView>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.log_up" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/text_app"
+        android:label="PPS Market"
+        android:roundIcon="@mipmap/text_app_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Log_Up"
+        tools:targetApi="31" >
+        <activity
+            android:name=".InputPhone"
+            android:exported="false" />
+        <activity
+            android:name=".SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditProfile"
+            android:exported="false" />
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SportList"
+            android:exported="false" />
+        <activity
+            android:name=".ElectronicList"
+            android:exported="false" />
+        <activity
+            android:name=".FashionList"
+            android:exported="false" />
+        <activity
+            android:name=".HouseholdList"
+            android:exported="false" />
+        <activity
+            android:name=".MessageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GoogleAuthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetailProduct"
+            android:exported="false" />
+        <activity
+            android:name=".CarList"
+            android:exported="false" />
+        <activity
+            android:name=".BillBuyList"
+            android:exported="false" />
+        <activity
+            android:name=".HelpFragment"
+            android:exported="false" />
+        <activity
+            android:name=".FacebookAuthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Verify_PhoneNumber"
+            android:exported="false" />
+        <activity
+            android:name=".LogUp"
+            android:exported="false" />
+        <activity
+            android:name=".LogIn"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="com.facebook.sdk.ClientToken"
+            android:value="@string/facebook_client_token" />
+    </application>
+
+</manifest>

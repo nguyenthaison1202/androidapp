@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".rejectStory">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleViewReject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"/>
+    <TextView
+        android:id="@+id/textEmptyReject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bạn chưa có tin nào đăng trong mục này"
+        android:gravity="center"
+        android:layout_gravity="center_vertical"
+        android:textColor="#989898"
+        android:textSize="15sp"
+        android:visibility="invisible"/>
+
+</FrameLayout>

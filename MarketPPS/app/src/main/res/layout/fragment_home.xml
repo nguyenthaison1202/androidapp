@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".HomeFragment"
+    android:background="#F3F3F3">
+<!--   <LinearLayout-->
+<!--       android:id="@+id/title"-->
+<!--       android:layout_width="match_parent"-->
+<!--       android:layout_height="200dp"-->
+<!--       android:background="@color/white"-->
+<!--       android:orientation="vertical"-->
+<!--       android:gravity="center">-->
+   <androidx.viewpager.widget.ViewPager
+       android:id="@+id/viewPagerHome"
+       android:layout_width="match_parent"
+       android:layout_height="150dp" />
+
+   <me.relex.circleindicator.CircleIndicator
+       android:id="@+id/circleIndicator"
+       android:layout_width="wrap_content"
+       android:layout_height="15dp"
+       android:layout_below="@+id/viewPagerHome"
+       android:layout_marginTop="-20dp"
+       android:layout_centerInParent="true"
+       app:ci_drawable="@drawable/circleindicator_round"
+       />
+<!--   </LinearLayout>-->
+
+   <TableLayout
+       android:id="@+id/menu_home"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/circleIndicator"
+       android:layout_marginTop="10dp"
+       android:background="@color/white"
+       android:stretchColumns="*">
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="10dp"
+          android:layout_marginTop="10dp"
+          android:text="Khám phá danh mục"
+          android:textColor="@color/black"
+          android:textSize="20sp"
+          android:textStyle="bold" />
+
+      <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:gravity="center">
+
+         <LinearLayout
+             android:gravity="center"
+             android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewCar"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp">
+
+               <ImageView
+                   android:id="@+id/imgXeco"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:src="@drawable/xedepoto" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Xe cộ"
+                android:textColor="@color/black"/>
+         </LinearLayout>
+
+         <LinearLayout
+             android:layout_width="wrap_content"
+             android:layout_height="match_parent"
+             android:gravity="center"
+             android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewPhone"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp">
+
+               <ImageView
+                   android:id="@+id/imgDoDientTu"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:scaleType="centerCrop"
+                   android:src="@drawable/dienthoai"
+                   app:cardCornerRadius="10dp" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đồ điện tử"
+                android:textColor="@color/black"/>
+
+         </LinearLayout>
+
+         <LinearLayout
+             android:gravity="center"
+             android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewClothes"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_margin="15dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardUseCompatPadding="true">
+
+               <ImageView
+                   android:id="@+id/imgThoiTrang"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:scaleType="centerCrop"
+                   android:src="@drawable/thoitrang"
+                   app:cardCornerRadius="10dp" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-10dp"
+                android:text="Thời trang"
+                android:textColor="@color/black"/>
+         </LinearLayout>
+
+      </TableRow>
+
+      <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:gravity="center">
+
+         <LinearLayout
+             android:layout_span="1"
+             android:gravity="center"
+             android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewGiaDung"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_margin="15dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardUseCompatPadding="true">
+
+               <ImageView
+                   android:id="@+id/imgDoGiaDung"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:scaleType="centerCrop"
+                   android:src="@drawable/maygiat"
+                   app:cardCornerRadius="10dp" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-10dp"
+                android:text="Đồ gia dụng"
+                android:textColor="@color/black"/>
+         </LinearLayout>
+
+         <LinearLayout
+             android:layout_span="1"
+             android:gravity="center"
+             android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewSport"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_margin="15dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardUseCompatPadding="true">
+
+               <ImageView
+                   android:id="@+id/imgSport"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:scaleType="centerCrop"
+                   android:src="@drawable/sport"
+                   app:cardCornerRadius="10dp" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-10dp"
+                android:text="Dụng cụ thể thao"
+                android:textColor="@color/black"/>
+         </LinearLayout>
+      </TableRow>
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="5dp" />
+   </TableLayout>
+
+   <TableLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/menu_home"
+       android:layout_marginTop="5dp"
+       android:background="@color/white"
+       android:stretchColumns="*">
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="10dp"
+          android:layout_marginTop="10dp"
+          android:text="PPS Market Có Gì Mới?"
+          android:textColor="@color/black"
+          android:textSize="18sp"
+          android:textStyle="bold" />
+
+      <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="150dp"
+          android:layout_span="1"
+          android:gravity="center"
+          android:orientation="horizontal">
+
+         <androidx.cardview.widget.CardView
+             android:layout_width="200dp"
+             android:layout_height="150dp"
+             android:layout_margin="15dp"
+             app:cardCornerRadius="10dp"
+             app:cardUseCompatPadding="true"
+
+             >
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/sale"
+                app:cardCornerRadius="10dp" />
+         </androidx.cardview.widget.CardView>
+
+         <androidx.cardview.widget.CardView
+             android:layout_width="200dp"
+             android:layout_height="150dp"
+             app:cardCornerRadius="10dp"
+             app:cardUseCompatPadding="true">
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/nhantruoctrasau"
+                app:cardCornerRadius="10dp" />
+         </androidx.cardview.widget.CardView>
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:orientation="horizontal">
+
+         <androidx.cardview.widget.CardView
+             android:layout_width="match_parent"
+             android:layout_height="150dp"
+             app:cardCornerRadius="10dp"
+             app:cardUseCompatPadding="true">
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/giaohang"
+                app:cardCornerRadius="10dp" />
+         </androidx.cardview.widget.CardView>
+      </LinearLayout>
+
+   </TableLayout>
+
+</RelativeLayout>

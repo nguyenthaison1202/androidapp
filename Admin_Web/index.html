@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Trang chủ</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="https://fonts.googleapis.com/css?family=Oswald:400,700%7cPoppins:300,400,400i,600,600i,700,800,900">
+<link
+	href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap"
+	rel="stylesheet">
+<script src="https://kit.fontawesome.com/7b78e77d77.js"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-sm nav_bar_content">
+		<div class="content_logo">
+			<a id="logo_nav" href="#"><img src="./assets/img/Logo.png"></a>
+			<h4>
+				<a href="#">Trang chủ</a>
+			</h4>
+		</div>
+
+		<div id="nav-links" class="nav-links">
+			<i class="fa fa-times hide_icon" onclick="hideMenu()"></i>
+			
+            
+
+			<ul class="navbar-nav">
+				<li class="nav-item">
+				  <a class="nav-link" href="#">
+					<h4>Xin chào, Admin</h4>    
+				  </a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="./login.html">
+					  <h4>Đăng xuất</h4> 
+				  </a>
+				</li>
+			  </ul>
+
+		</div>
+		<i class="fa fa-bars hide_icon" onclick="showMenu()"></i>
+	</nav>
+
+	<div class="container-fluid bg_admin">
+		
+		<h1 class="title_container no_top">Danh sách tin đăng</h1>
+
+			<table class="user_table" >
+				<thead>
+				  <th>ID</th>
+				  <th>Danh mục</th>
+				  <th>Giá sản phẩm</th>
+				  <th>Địa chỉ</th>
+				  <th>Mô tả</th>
+				  <th>Số điện thoại</th>
+				  <th>Tên sản phẩm</th>				 
+          <th>Trạng thái</th>
+          <th>Thao tác</th>
+				</thead>
+                <tbody id="tbody_user">
+
+                </tbody>
+
+			  </table>
+
+
+	</div>
+  <div class="modal" id="deleteModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Xác nhận xóa tin</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <h4>Bạn có muốn xóa tin này không</h4>
+        
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success" id="delete_confirm" data-dismiss="modal" >Xóa</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Xác nhận tin đăng</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <label for="update_verification">Trạng thái tin đăng</label>
+          <input type="text" id="update_value" name="update_verification" placeholder="nhập giá trị"/>
+        
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success" id="update_verification" data-dismiss="modal">Xác nhận</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+	<div class="copyright">
+		<h3>© Bản quyền thuộc về Phát - Phúc - Sơn</h3>
+	</div>
+
+
+
+
+</body>
+
+<script type="module">
+// let ID = 0;
+let tbody = document.getElementById("tbody_user");
+
+let update_btn = document.getElementById("update_verification");
+let updateValue = document.getElementById("update_value");
+let delete_btn = document.getElementById("delete_confirm");
+
+
+// Hàm dùng để in các giá trị ra màn hình.
+
+function getDataByInfo(countId,category, address, price,description,phone,name,verification){
+
+    let tr = document.createElement("tr");
+    let td1 = document.createElement("td");
+    let td2 = document.createElement("td");
+    let td3 = document.createElement("td");
+    let td4 = document.createElement("td");
+    let td5 = document.createElement("td");
+    let td6 = document.createElement("td");
+    let td7 = document.createElement("td");
+    let td8 = document.createElement("td");
+    let td9 = document.createElement("button");
+    let td10 = document.createElement("button");
+
+    td1.innerHTML=countId;
+    td2.innerHTML=category;
+    td3.innerHTML=address;
+    td4.innerHTML=price;
+    td5.innerHTML=description;
+    td6.innerHTML=phone;
+    td7.innerHTML=name;
+    td8.innerHTML=verification;
+    td9.innerHTML="Xóa";
+    td9.classList.add("btn");
+    td9.classList.add("btn-success");
+    td9.classList.add("btn_delete")
+    td9.setAttribute("data-toggle","modal");
+    td9.setAttribute("data-target","#deleteModal");
+    td9.addEventListener("click",function(e){
+      delete_btn.addEventListener("click",function(e){
+        deleteProduct(""+countId);
+        location.reload();
+    })
+    });
+
+    td10.innerHTML="Cập nhật";
+    td10.classList.add("btn");
+    td10.classList.add("btn_update");
+    td10.classList.add("btn-danger");
+    td10.setAttribute("data-toggle","modal");
+    td10.setAttribute("data-target","#myModal");
+    td10.setAttribute("id",countId);
+    td10.addEventListener("click",function(e){
+      update_btn.addEventListener("click",function(e){
+        updateVerification(""+countId);
+        location.reload();
+        
+      })
+    });
+
+
+    
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tr.appendChild(td4);
+    tr.appendChild(td5);
+    tr.appendChild(td6);
+    tr.appendChild(td7);
+    tr.appendChild(td8);
+    tr.appendChild(td9);
+    tr.appendChild(td10);
+
+    // console.log(tr);
+    tbody.appendChild(tr);
+}
+
+
+// Hàm để lấy ra toàn bộ dữ liệu, sau khi đã lấy từ db thông qua hàm (getDataOnce).
+// Hàm getDataByInfo sẽ gán vào các thẻ để in ra màn hình.
+function getAllData(countId,Products){
+    let i = 0;
+    // deleteAll();
+    Products.forEach(product =>{
+        getDataByInfo(countId[i],product.danhmucSanPham,product.diachiSanPham,product.giaSanPham,product.motaSanPham,product.sodienthoaiUser,product.tenSanPham,product.verify);
+        i++;
+      }); 
+}
+
+
+
+    // Import the functions you need from the SDKs you need
+    import { initializeApp} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyA21cUqSri32sHJ6IW4MLSytmwvwkAhg-Y",
+      authDomain: "detaicuoiki-7b040.firebaseapp.com",
+      databaseURL: "https://detaicuoiki-7b040-default-rtdb.firebaseio.com",
+      projectId: "detaicuoiki-7b040",
+      storageBucket: "detaicuoiki-7b040.appspot.com",
+      messagingSenderId: "1012641231533",
+      appId: "1:662957929188:android:f7e2e300315e792ad072f1"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    import { getDatabase, ref,onValue,update,remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+  
+    
+    let db = getDatabase();
+
+
+
+
+
+// Hàm lấy dữ liệu từ db về. Và truyền vào hàm getAllData() để in ra màn hình
+function getAllDataOnce(){
+    let database = ref(db,"product");
+
+    onValue(database,(snapshot)=>{
+        
+        let products = [];
+        let countId = [];
+        let i = 0;
+        // console.log(Object.keys(snapshot.val())[1]);
+        snapshot.forEach(childSnapshot=>{
+          products.push(childSnapshot.val());
+          
+        });
+        while(i<snapshot.val().length-1){
+          if(!countId.includes(countId[i])){
+            countId.push(Object.keys(snapshot.val())[i]);
+          }
+          i++;
+        }
+        // console.log(countId);
+        getAllData(countId,products);
+    });
+
+}
+
+
+// Check chỉ để cho nhập 0,1,-1
+function checkInput(inputValue){
+  let flag = true;
+  if(inputValue !==1 && inputValue!==-1 && inputValue!==0){
+    flag = false;
+  }
+  return flag;
+}
+
+
+// Hàm dùng để update verification
+function updateVerification(id){
+  if(checkInput(parseInt(updateValue.value))){
+    update(ref(db,"product/"+id),{
+    verify:updateValue.value
+  })
+  .then(()=>{
+    console.log("success");
+  })
+  .catch(()=>{
+    console.log("error");
+  })
+  }else{
+    alert("Giá trị bạn nhập chưa chính xác, hãy thử lại");
+  }
+
+  
+}
+
+// Hàm để xóa product
+function deleteProduct(id){
+    remove(ref(db,"product/"+id))
+  .then(()=>{
+    console.log("success");
+  })
+  .catch(()=>{
+    console.log("error");
+  })
+
+  
+}
+
+window.addEventListener("load",function(){
+  getAllDataOnce();
+})
+
+// window.onload = getAllDataOnce;
+ </script>
+
+</html>

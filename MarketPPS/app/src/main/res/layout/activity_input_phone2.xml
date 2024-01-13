@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".InputPhone">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edInputName"
+        android:hint="Họ và tên"
+        android:paddingStart="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:inputType="text"
+        android:layout_marginTop="10dp"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edInputPhone"
+        android:hint="Nhập số điện thoại"
+        android:paddingStart="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:inputType="phone"
+        android:layout_marginTop="10dp"
+        />
+    <Button
+        android:id="@+id/confirm_phone_verify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Xác nhận"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        />
+
+</LinearLayout>
